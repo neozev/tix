@@ -1,0 +1,168 @@
+@use '../App.scss' as *;
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+    .modal-content {
+        background-color: $background-color;
+        border-radius: 8px;
+        width: 90%;
+        max-width: 600px;
+        max-height: 90vh;
+        overflow-y: auto;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+
+    input,
+    textarea,
+    select {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+        box-sizing: border-box;
+        @extend %input-box-shape;
+
+        &:focus {
+            outline: none;
+            border-color: #4CAF50;
+        }
+    }
+
+    textarea {
+        resize: none;
+        overflow-y: hidden;
+        field-sizing: content;
+        box-sizing: border-box;
+        white-space: pre-wrap;
+        }
+    }
+
+    .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        border-bottom: 1px solid #e0e0e0;
+
+        h2 {
+            margin: 0;
+            font-size: 24px;
+            color: $primary-color;
+        }
+    }
+
+    .close-button {
+        background: none;
+        border: none;
+        font-size: 32px;
+        cursor: pointer;
+        color: #666;
+        line-height: 1;
+        padding: 0;
+        width: 32px;
+        height: 32px;
+
+        &:hover {
+            color: #333;
+        }
+    }
+
+    .modal-body {
+        padding: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: $primary-color;
+            font-size: 18px;
+        }
+
+        p {
+            margin-top: 0px;
+        }
+    }
+
+    .ticket-metadata {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: $background-color2;
+        border-radius: 4px;
+
+        p {
+            margin: 8px 0;
+            font-size: 18px;
+            color: $primary-color;
+        }
+
+        .deleted-info {
+            color: #ff0000;
+            font-weight: 600;
+        }
+    }
+
+    .modal-footer {
+        padding: 20px;
+        border-top: 1px solid #e0e0e0;
+        display: flex;
+        gap: 10px;
+        justify-content: flex-end;
+    }
+
+    .btn-restore,
+    .btn-update,
+    .btn-delete {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.2s;
+
+        &:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    }
+
+    .btn-update {
+        background-color: hsl(122, 39%, 49%);
+        color: white;
+
+        &:hover:not(:disabled) {
+            background-color: hsl(123, 40%, 45%);
+        }
+    }
+
+    .btn-delete {
+        background-color: hsl(4, 90%, 58%);
+        color: white;
+
+        &:hover:not(:disabled) {
+            background-color: hsl(4, 90%, 45%);
+        }
+    }
+
+    .btn-restore {
+        background-color: hsl(190, 90%, 58%);
+        color: white;
+
+        &:hover:not(:disabled) {
+            background-color: hsl(190, 90%, 44%);
+        }
+    }
+}
+

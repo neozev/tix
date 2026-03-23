@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+$font-global: "DM Sans", sans-serif;
+$primary-color: white;
+$secondary-color: hsl(0, 0%, 50%);
+$background-color: #1E1F20;
+$background-color2: #2f3133;
+%input-box-shape {
+  color: $primary-color;
+  background-color: $background-color;
+  border-radius: 20px;
+  border: 2px solid (rgb(200, 200, 200));
+  cursor: pointer;
+  padding: 10px;
+  font-family: "DM Sans", sans-serif;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #131314;
+  box-sizing: border-box;
+  color: white;
+  display: grid;
+}
